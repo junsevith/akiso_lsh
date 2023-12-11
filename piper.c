@@ -17,9 +17,11 @@
 // 1 - write
 // -1 - none
 // 2 - all
-void addRedirects(char **command, int length, int mode) {
+void redirect_handler(char **command, int length, int mode) {
+    //sprawdza po kolei wszystkie słowa czy nie zaczynają się od symbolu przekierowania
     for (int j = 0; j < length; j++) {
         if (command[j][0] == '>' && (mode == 1 || mode == 2)) {
+            //bierze resztę znalezionego słowa jako ścieżkę do pliku
             char path[PATH_MAX];
             for (int k = 1; k < strlen(command[j]); k++) {
                 path[k - 1] = command[j][k];
@@ -82,6 +84,9 @@ const int MAX_PIPES = 16;
 
 int pipe_handler(char **args, int args_count) {
     int waiting = 1;
+
+    // sprawdzamy, czy ostatnim argumentem jest &
+    // jeśli tak, to usuwamy go i nie czekamy na procesy potomne
     if (strcmp(args[args_count - 1], "&") == 0) {
         waiting = 0;
         args[args_count - 1] = NULL;
@@ -89,33 +94,39 @@ int pipe_handler(char **args, int args_count) {
     }
 
 
+    // tablica z pointerami do komend (komenda to tablica słów, pojedyńcze słowo to char* (string))
     char **commands[MAX_PIPES];
+    // długość poszczególnych komend
     int com_len[MAX_PIPES];
+    // licznik komend
     int com_count = 1;
 
-    commands[0] = args;
-    com_len[0] = 0;
+    // com_len[0] = 0; //to chyba jest niepotrzebne ale cykam sie to usunac
 
+    // dzielimy input na poszczególne komendy rozdzielone |
     for (int j = 0; j < args_count; ++j) {
         if (strcmp(args[j], "|") == 0) {
-            args[j] = NULL;
+            args[j] = NULL; //zamieniamy | na NULL, żeby komenda się kończyła w tym miejscu
             commands[com_count] = args + j + 1;
-            if (com_count > 1) {
-                com_len[com_count - 1] = j - com_len[com_count - 2] - 1;
-            } else {
+            if (com_count == 1) {
                 com_len[com_count - 1] = j;
+            } else {
+                com_len[com_count - 1] = j - com_len[com_count - 2] - 1;
             }
             com_count++;
         }
     }
 
     if (com_count > 1) {
+        // ustawiamy długość ostatniej komendy
         com_len[com_count - 1] = args_count - com_len[com_count - 2] - 1;
     } else {
+        // w wypadku gdy nie ma żadnych pipe pierwsza komenda to cały input
+        commands[0] = args;
         com_len[0] = args_count;
     }
-//    printf("com_len[%d] = %d\n", com_count - 1, com_len[com_count - 1]);
 
+    // tworzymy pipe'y dla każdej komendy
     int fd[com_count - 1][2];
     for (int k = 0; k < com_count - 1; k++) {
         if (pipe(fd[k]) == -1) {
@@ -127,18 +138,19 @@ int pipe_handler(char **args, int args_count) {
     int pids[com_count];
 //    int status, wpid;
 
+    // dla każdej komendy tworzymy nowy proces
     for (int l = 0; l < com_count; l++) {
         int pid = fork();
         if (pid == 0) {
+            // jeśli jest więcej niż jedna komenda, to ustawiamy odpowiednie przekierowania
             if (com_count > 1) {
-//                printf("execvp: %s\n", commands[l][0]);
                 if (l == 0) {
                     // pierwszy proces w pipe
                     if (dup2(fd[l][1], 1) == -1) {
                         perror("dup2 error on l=commands-1");
                     }
 
-                    addRedirects(commands[l], com_len[l], 0);
+                    redirect_handler(commands[l], com_len[l], 0);
 
 
                 } else if (l != com_count - 1) {
@@ -150,7 +162,7 @@ int pipe_handler(char **args, int args_count) {
                         perror("dup2 error");
                     }
 
-                    addRedirects(commands[l], com_len[l], -1);
+                    redirect_handler(commands[l], com_len[l], -1);
 
                 } else {
                     // ostatni proces w pipe
@@ -158,11 +170,11 @@ int pipe_handler(char **args, int args_count) {
                         perror("dup2 error on l=0");
                     }
 
-                    addRedirects(commands[l], com_len[l], 1);
+                    redirect_handler(commands[l], com_len[l], 1);
                 }
             } else {
                 // w przypadku gdy nie ma pipe
-                addRedirects(commands[l], com_len[l], 2);
+                redirect_handler(commands[l], com_len[l], 2);
             }
 
             // zamykamy wszystkie deskryptory w potomnym procesie
