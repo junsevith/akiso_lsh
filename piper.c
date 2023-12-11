@@ -79,11 +79,12 @@ void addRedirects(char **command, int length, int mode) {
 }
 
 const int MAX_PIPES = 16;
-int pipe_handler(char **args, int args_count){
+
+int pipe_handler(char **args, int args_count) {
     int waiting = 1;
-    if(strcmp(args[args_count-1], "&") == 0){
+    if (strcmp(args[args_count - 1], "&") == 0) {
         waiting = 0;
-        args[args_count-1] = NULL;
+        args[args_count - 1] = NULL;
         args_count--;
     }
 
@@ -113,7 +114,7 @@ int pipe_handler(char **args, int args_count){
     } else {
         com_len[0] = args_count;
     }
-    printf("com_len[%d] = %d\n", com_count - 1, com_len[com_count - 1]);
+//    printf("com_len[%d] = %d\n", com_count - 1, com_len[com_count - 1]);
 
     int fd[com_count - 1][2];
     for (int k = 0; k < com_count - 1; k++) {
@@ -130,32 +131,34 @@ int pipe_handler(char **args, int args_count){
         int pid = fork();
         if (pid == 0) {
             if (com_count > 1) {
+//                printf("execvp: %s\n", commands[l][0]);
                 if (l == 0) {
-                    // ostatni proces w pipe
-                    if (dup2(fd[l][0], 0) == -1) {
-                        perror("dup2 error on l=0");
+                    // pierwszy proces w pipe
+                    if (dup2(fd[l][1], 1) == -1) {
+                        perror("dup2 error on l=commands-1");
                     }
 
-                    addRedirects(commands[l], com_len[l], 1);
+                    addRedirects(commands[l], com_len[l], 0);
+
 
                 } else if (l != com_count - 1) {
                     // środkowe procesy w pipe
-                    if (dup2(fd[l - 1][1], 1) == -1) {
+                    if (dup2(fd[l][1], 1) == -1) {
                         perror("dup2 error");
                     }
-                    if (dup2(fd[l][0], 0) == -1) {
+                    if (dup2(fd[l - 1][0], 0) == -1) {
                         perror("dup2 error");
                     }
 
                     addRedirects(commands[l], com_len[l], -1);
 
                 } else {
-                    // pierwszy proces w pipe
-                    if (dup2(fd[l - 1][1], 1) == -1) {
-                        perror("dup2 error on l=commands-1");
+                    // ostatni proces w pipe
+                    if (dup2(fd[l - 1][0], 0) == -1) {
+                        perror("dup2 error on l=0");
                     }
 
-                    addRedirects(commands[l], com_len[l], 0);
+                    addRedirects(commands[l], com_len[l], 1);
                 }
             } else {
                 // w przypadku gdy nie ma pipe
@@ -192,7 +195,7 @@ int pipe_handler(char **args, int args_count){
     }
 
     // czekamy na wszystkie procesy potomne
-    if(waiting){
+    if (waiting) {
         for (int n = com_count - 1; n > -1; n--) {
             if (pids[n] > 0) {
                 int status;

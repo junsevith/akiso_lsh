@@ -21,6 +21,7 @@ void signal_handler(int no) {
         // Gdy czekamy na dziecko, sygnały są przekierowywane do niego,
         // więc nie trzeba nic z tym robić.
         // Sygnał jest ignorowany, abyśmy przypadkowo nie wyszli z lsh
+//        printf("\n");
     }
 }
 
@@ -37,7 +38,7 @@ void lsh_loop(void) {
         char cwd[PATH_MAX];
         getcwd(cwd, sizeof(cwd));
 
-        printf("[\e[38;5;39mLSH \e[38;5;178m%s\e[0m] >> ", cwd);
+        printf("\e[38;5;178m%s \e[38;5;39mLSH \e[0m>> ", cwd);
         line = lsh_read_line();
         args = lsh_split_line(line, &args_count);
         status = lsh_execute(args, args_count);
