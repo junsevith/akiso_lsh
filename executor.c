@@ -10,7 +10,7 @@
 #include <sys/wait.h>
 #include <string.h>
 
-
+// stara wersja uruchamiania komend
 int lsh_launch(char **args, int args_count) {
     pid_t pid, wpid;
     int status;
@@ -47,7 +47,7 @@ int lsh_launch(char **args, int args_count) {
 }
 
 /*
-  Function Declarations for builtin shell commands:
+  Deklaracje wbudowanych funkcji
  */
 int lsh_cd(char **args);
 
@@ -56,7 +56,7 @@ int lsh_help(char **args);
 int lsh_exit(char **args);
 
 /*
-  List of builtin commands, followed by their corresponding functions.
+  Array zawierający nazwy wbudowanych funkcji
  */
 char *builtin_str[] = {
         "cd",
@@ -64,6 +64,9 @@ char *builtin_str[] = {
         "exit"
 };
 
+/*
+  Tablica wskaźników do wbudowanych funkcji (magia, czary)
+ */
 int (*builtin_func[])(char **) = {
         &lsh_cd,
         &lsh_help,
@@ -75,7 +78,7 @@ int lsh_num_builtins() {
 }
 
 /*
-  Builtin function implementations.
+  Wbudowane funkcje
 */
 int lsh_cd(char **args) {
     if (args[1] == NULL) {
@@ -110,7 +113,7 @@ int lsh_execute(char **args, int args_count) {
     int i;
 
     if (args[0] == NULL) {
-        // An empty command was entered.
+        // Wprowadzono pustą linię
         return 1;
     }
 
@@ -119,8 +122,6 @@ int lsh_execute(char **args, int args_count) {
             return (*builtin_func[i])(args);
         }
     }
-
-
 
 //    return lsh_launch(args, args_count);
     return pipe_handler(args, args_count);

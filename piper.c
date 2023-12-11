@@ -11,8 +11,8 @@
 #include <fcntl.h>
 #include <linux/limits.h>
 
-// sets fds to files we specify
-// modes:
+// ustawia odpowiednie przekierowania dla komendy
+// mode:
 // 0 - read
 // 1 - write
 // -1 - none
@@ -31,6 +31,8 @@ void addRedirects(char **command, int length, int mode) {
                 _exit(1);
             }
 
+            //dup2 - zastępuje deskryptor pliku podany jako drugi argument pierwszym argumentem
+            // 0 - stdin, 1 - stdout, 2 - stderr
             if (dup2(file, 1) == -1) {
                 perror("dup2 error when tryging to redirect to file");
             }
@@ -119,7 +121,7 @@ int pipe_handler(char **args, int args_count){
         }
     }
 
-    // we will store processes pids to wait for them later
+    // zapisujemy pid-y procesów potomnych, żeby móc na nich poczekać
     int pids[com_count];
 //    int status, wpid;
 
@@ -128,7 +130,7 @@ int pipe_handler(char **args, int args_count){
         if (pid == 0) {
             if (com_count > 1) {
                 if (l == 0) {
-                    // case for the LAST command in pipes
+                    // ostatni proces w pipe
                     if (dup2(fd[l][0], 0) == -1) {
                         perror("dup2 error on l=0");
                     }
@@ -136,7 +138,7 @@ int pipe_handler(char **args, int args_count){
                     addRedirects(commands[l], com_len[l], 1);
 
                 } else if (l != com_count - 1) {
-                    // case for all the MIDDLE commands in pipes
+                    // środkowe procesy w pipe
                     if (dup2(fd[l - 1][1], 1) == -1) {
                         perror("dup2 error");
                     }
@@ -147,7 +149,7 @@ int pipe_handler(char **args, int args_count){
                     addRedirects(commands[l], com_len[l], -1);
 
                 } else {
-                    // case for the FRIST command in pipes
+                    // pierwszy proces w pipe
                     if (dup2(fd[l - 1][1], 1) == -1) {
                         perror("dup2 error on l=commands-1");
                     }
@@ -155,39 +157,40 @@ int pipe_handler(char **args, int args_count){
                     addRedirects(commands[l], com_len[l], 0);
                 }
             } else {
-                // if we have only one command, we add all redirects to it
+                // w przypadku gdy nie ma pipe
                 addRedirects(commands[l], com_len[l], 2);
             }
 
-            // we close all unused fds - important!
+            // zamykamy wszystkie deskryptory w potomnym procesie
             for (int j = 0; j < com_count - 1; j++) {
                 close(fd[j][0]);
                 close(fd[j][1]);
             }
 
-            // we execute the command - process is replaced by it and dies off eventually, freeing resources
+            // uruchamiamy komendę
 //            lsh_launch(commands[l], com_len[l]);
             execvp(commands[l][0], commands[l]);
-            // if we get to this part, execvp failed
+
+            // kod poniżej wykona się tylko, jeśli execvp zwróci błąd
             perror("execvp error");
             _exit(1);
 
         } else if (pid < 0) {
-            // Error forking
+            // Błąd przy tworzeniu procesu potomnego
             perror("lsh");
         } else {
-            // Parent process
+            // Proces główny
             pids[l] = pid;
         }
     }
 
-//     close fds in parent
+    // zamykamy wszystkie deskryptory w procesie głównym
     for (int m = 0; m < com_count - 1; m++) {
         close(fd[m][0]);
         close(fd[m][1]);
     }
 
-    // if we decided to wait, wait for all
+    // czekamy na wszystkie procesy potomne
     if(waiting){
         for (int n = com_count - 1; n > -1; n--) {
             if (pids[n] > 0) {
