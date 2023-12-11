@@ -88,7 +88,7 @@ int pipe_handler(char **args, int args_count){
     }
 
 
-    char ***commands = malloc(MAX_PIPES * sizeof(char **));
+    char **commands[MAX_PIPES];
     int com_len[MAX_PIPES];
     int com_count = 1;
 
@@ -113,6 +113,7 @@ int pipe_handler(char **args, int args_count){
     } else {
         com_len[0] = args_count;
     }
+    printf("com_len[%d] = %d\n", com_count - 1, com_len[com_count - 1]);
 
     int fd[com_count - 1][2];
     for (int k = 0; k < com_count - 1; k++) {
