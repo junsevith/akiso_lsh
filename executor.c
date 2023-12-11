@@ -3,17 +3,13 @@
 //
 
 #include "executor.h"
+#include "piper.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
 #include <string.h>
 
-
-//static pid_t pid;
-//void redirect(int sig) {
-//    kill(pid, sig);
-//}
 
 int lsh_launch(char **args, int args_count) {
     pid_t pid, wpid;
@@ -124,5 +120,8 @@ int lsh_execute(char **args, int args_count) {
         }
     }
 
-    return lsh_launch(args, args_count);
+
+
+//    return lsh_launch(args, args_count);
+    return pipe_handler(args, args_count);
 }

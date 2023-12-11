@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/pawel/CLionProjects/lsh
+CMAKE_SOURCE_DIR = /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/lsh.dir/depend.make
@@ -72,65 +72,65 @@ include CMakeFiles/lsh.dir/flags.make
 CMakeFiles/lsh.dir/main.c.o: CMakeFiles/lsh.dir/flags.make
 CMakeFiles/lsh.dir/main.c.o: ../main.c
 CMakeFiles/lsh.dir/main.c.o: CMakeFiles/lsh.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lsh.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lsh.dir/main.c.o -MF CMakeFiles/lsh.dir/main.c.o.d -o CMakeFiles/lsh.dir/main.c.o -c /mnt/c/Users/pawel/CLionProjects/lsh/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lsh.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lsh.dir/main.c.o -MF CMakeFiles/lsh.dir/main.c.o.d -o CMakeFiles/lsh.dir/main.c.o -c /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/main.c
 
 CMakeFiles/lsh.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lsh.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/pawel/CLionProjects/lsh/main.c > CMakeFiles/lsh.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/main.c > CMakeFiles/lsh.dir/main.c.i
 
 CMakeFiles/lsh.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lsh.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/pawel/CLionProjects/lsh/main.c -o CMakeFiles/lsh.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/main.c -o CMakeFiles/lsh.dir/main.c.s
 
 CMakeFiles/lsh.dir/executor.c.o: CMakeFiles/lsh.dir/flags.make
 CMakeFiles/lsh.dir/executor.c.o: ../executor.c
 CMakeFiles/lsh.dir/executor.c.o: CMakeFiles/lsh.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lsh.dir/executor.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lsh.dir/executor.c.o -MF CMakeFiles/lsh.dir/executor.c.o.d -o CMakeFiles/lsh.dir/executor.c.o -c /mnt/c/Users/pawel/CLionProjects/lsh/executor.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lsh.dir/executor.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lsh.dir/executor.c.o -MF CMakeFiles/lsh.dir/executor.c.o.d -o CMakeFiles/lsh.dir/executor.c.o -c /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/executor.c
 
 CMakeFiles/lsh.dir/executor.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lsh.dir/executor.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/pawel/CLionProjects/lsh/executor.c > CMakeFiles/lsh.dir/executor.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/executor.c > CMakeFiles/lsh.dir/executor.c.i
 
 CMakeFiles/lsh.dir/executor.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lsh.dir/executor.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/pawel/CLionProjects/lsh/executor.c -o CMakeFiles/lsh.dir/executor.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/executor.c -o CMakeFiles/lsh.dir/executor.c.s
 
 CMakeFiles/lsh.dir/reader.c.o: CMakeFiles/lsh.dir/flags.make
 CMakeFiles/lsh.dir/reader.c.o: ../reader.c
 CMakeFiles/lsh.dir/reader.c.o: CMakeFiles/lsh.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lsh.dir/reader.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lsh.dir/reader.c.o -MF CMakeFiles/lsh.dir/reader.c.o.d -o CMakeFiles/lsh.dir/reader.c.o -c /mnt/c/Users/pawel/CLionProjects/lsh/reader.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lsh.dir/reader.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lsh.dir/reader.c.o -MF CMakeFiles/lsh.dir/reader.c.o.d -o CMakeFiles/lsh.dir/reader.c.o -c /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/reader.c
 
 CMakeFiles/lsh.dir/reader.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lsh.dir/reader.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/pawel/CLionProjects/lsh/reader.c > CMakeFiles/lsh.dir/reader.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/reader.c > CMakeFiles/lsh.dir/reader.c.i
 
 CMakeFiles/lsh.dir/reader.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lsh.dir/reader.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/pawel/CLionProjects/lsh/reader.c -o CMakeFiles/lsh.dir/reader.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/reader.c -o CMakeFiles/lsh.dir/reader.c.s
 
-CMakeFiles/lsh.dir/signaler.c.o: CMakeFiles/lsh.dir/flags.make
-CMakeFiles/lsh.dir/signaler.c.o: ../signaler.c
-CMakeFiles/lsh.dir/signaler.c.o: CMakeFiles/lsh.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/lsh.dir/signaler.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lsh.dir/signaler.c.o -MF CMakeFiles/lsh.dir/signaler.c.o.d -o CMakeFiles/lsh.dir/signaler.c.o -c /mnt/c/Users/pawel/CLionProjects/lsh/signaler.c
+CMakeFiles/lsh.dir/piper.c.o: CMakeFiles/lsh.dir/flags.make
+CMakeFiles/lsh.dir/piper.c.o: ../piper.c
+CMakeFiles/lsh.dir/piper.c.o: CMakeFiles/lsh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/lsh.dir/piper.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lsh.dir/piper.c.o -MF CMakeFiles/lsh.dir/piper.c.o.d -o CMakeFiles/lsh.dir/piper.c.o -c /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/piper.c
 
-CMakeFiles/lsh.dir/signaler.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lsh.dir/signaler.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/pawel/CLionProjects/lsh/signaler.c > CMakeFiles/lsh.dir/signaler.c.i
+CMakeFiles/lsh.dir/piper.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lsh.dir/piper.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/piper.c > CMakeFiles/lsh.dir/piper.c.i
 
-CMakeFiles/lsh.dir/signaler.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lsh.dir/signaler.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/pawel/CLionProjects/lsh/signaler.c -o CMakeFiles/lsh.dir/signaler.c.s
+CMakeFiles/lsh.dir/piper.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lsh.dir/piper.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/piper.c -o CMakeFiles/lsh.dir/piper.c.s
 
 # Object files for target lsh
 lsh_OBJECTS = \
 "CMakeFiles/lsh.dir/main.c.o" \
 "CMakeFiles/lsh.dir/executor.c.o" \
 "CMakeFiles/lsh.dir/reader.c.o" \
-"CMakeFiles/lsh.dir/signaler.c.o"
+"CMakeFiles/lsh.dir/piper.c.o"
 
 # External object files for target lsh
 lsh_EXTERNAL_OBJECTS =
@@ -138,10 +138,10 @@ lsh_EXTERNAL_OBJECTS =
 lsh: CMakeFiles/lsh.dir/main.c.o
 lsh: CMakeFiles/lsh.dir/executor.c.o
 lsh: CMakeFiles/lsh.dir/reader.c.o
-lsh: CMakeFiles/lsh.dir/signaler.c.o
+lsh: CMakeFiles/lsh.dir/piper.c.o
 lsh: CMakeFiles/lsh.dir/build.make
 lsh: CMakeFiles/lsh.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable lsh"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable lsh"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lsh.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,6 +153,6 @@ CMakeFiles/lsh.dir/clean:
 .PHONY : CMakeFiles/lsh.dir/clean
 
 CMakeFiles/lsh.dir/depend:
-	cd /mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/pawel/CLionProjects/lsh /mnt/c/Users/pawel/CLionProjects/lsh /mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug /mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug /mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug/CMakeFiles/lsh.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug/CMakeFiles/lsh.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/lsh.dir/depend
 

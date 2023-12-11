@@ -9,15 +9,19 @@
 
 void signal_handler(int no) {
 
-    // gdy dziecko kończy wykonywanie wysyła SIGCHILD
-    // parent wtedy wykonuje wait aby usunąć dziecko
-    //normalnie jest to obsługiwanie przez wait w executor::lsh_launch
-    //ale gdy użyjemy & lsh nie czeka na dziecko i SIGCHILD obsługiwany jest tutaj
+    // Gdy dziecko kończy wykonywanie, wysyła SIGCHILD.
+    // Parent wtedy wykonuje wait, aby usunąć dziecko,
+    // normalnie jest to obsługiwanie przez wait w executor::lsh_launch,
+    // ale gdy użyjemy &, lsh nie czeka na dziecko i SIGCHILD obsługiwany jest tutaj.
     if (no == 17) {
         waitpid(-1, NULL, WNOHANG);
-
-        // we want to ignore SIGINT
-    } else if (no == 2) {}
+        // Opcja WNOHANG sprawia, że nie czekamy, jeśli żadne dziecko nie zakończyło działania.
+        // Patrz man waitpid
+    } else if (no == 2) {
+        // Gdy czekamy na dziecko, sygnały są przekierowywane do niego,
+        // więc nie trzeba nic z tym robić.
+        // Sygnał jest ignorowany, abyśmy przypadkowo nie wyszli z lsh
+    }
 }
 
 void lsh_loop(void) {

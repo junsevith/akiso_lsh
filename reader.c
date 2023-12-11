@@ -36,6 +36,7 @@ char **lsh_split_line(char *line, int *arg_count ) {
         exit(EXIT_FAILURE);
     }
 
+    //dzielimy wejście do tablicy stringów
     token = strtok(line, LSH_TOK_DELIM);
     while (token != NULL) {
         tokens[position] = token;

@@ -1,7 +1,9 @@
 CMakeFiles/lsh.dir/executor.c.o: \
- /mnt/c/Users/pawel/CLionProjects/lsh/executor.c \
+ /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/executor.c \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/pawel/CLionProjects/lsh/executor.h /usr/include/stdio.h \
+ /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/executor.h \
+ /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/piper.h \
+ /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \

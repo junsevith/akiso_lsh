@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/pawel/CLionProjects/lsh
+# Install script for directory: /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,8 +1,9 @@
 CMakeFiles/lsh.dir/signaler.c.o: \
- /mnt/c/Users/pawel/CLionProjects/lsh/signaler.c \
+ /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/signaler.c \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/pawel/CLionProjects/lsh/signaler.h /usr/include/signal.h \
- /usr/include/features.h /usr/include/features-time64.h \
+ /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/signaler.h \
+ /usr/include/signal.h /usr/include/features.h \
+ /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \

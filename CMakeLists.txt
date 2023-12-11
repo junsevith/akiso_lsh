@@ -8,5 +8,5 @@ add_executable(lsh main.c
         executor.h
         reader.c
         reader.h
-        signaler.c
-        signaler.h)
+        piper.c
+        piper.h)

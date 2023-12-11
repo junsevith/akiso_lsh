@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/pawel/CLionProjects/lsh
+CMAKE_SOURCE_DIR = /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug/CMakeFiles /mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug/CMakeFiles /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/pawel/CLionProjects/lsh/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -177,6 +177,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lsh.dir/build.make CMakeFiles/lsh.dir/main.c.s
 .PHONY : main.c.s
 
+piper.o: piper.c.o
+.PHONY : piper.o
+
+# target to build an object file
+piper.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lsh.dir/build.make CMakeFiles/lsh.dir/piper.c.o
+.PHONY : piper.c.o
+
+piper.i: piper.c.i
+.PHONY : piper.i
+
+# target to preprocess a source file
+piper.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lsh.dir/build.make CMakeFiles/lsh.dir/piper.c.i
+.PHONY : piper.c.i
+
+piper.s: piper.c.s
+.PHONY : piper.s
+
+# target to generate assembly for a file
+piper.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lsh.dir/build.make CMakeFiles/lsh.dir/piper.c.s
+.PHONY : piper.c.s
+
 reader.o: reader.c.o
 .PHONY : reader.o
 
@@ -201,30 +225,6 @@ reader.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lsh.dir/build.make CMakeFiles/lsh.dir/reader.c.s
 .PHONY : reader.c.s
 
-signaler.o: signaler.c.o
-.PHONY : signaler.o
-
-# target to build an object file
-signaler.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lsh.dir/build.make CMakeFiles/lsh.dir/signaler.c.o
-.PHONY : signaler.c.o
-
-signaler.i: signaler.c.i
-.PHONY : signaler.i
-
-# target to preprocess a source file
-signaler.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lsh.dir/build.make CMakeFiles/lsh.dir/signaler.c.i
-.PHONY : signaler.c.i
-
-signaler.s: signaler.c.s
-.PHONY : signaler.s
-
-# target to generate assembly for a file
-signaler.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lsh.dir/build.make CMakeFiles/lsh.dir/signaler.c.s
-.PHONY : signaler.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -240,12 +240,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... piper.o"
+	@echo "... piper.i"
+	@echo "... piper.s"
 	@echo "... reader.o"
 	@echo "... reader.i"
 	@echo "... reader.s"
-	@echo "... signaler.o"
-	@echo "... signaler.i"
-	@echo "... signaler.s"
 .PHONY : help
 
 

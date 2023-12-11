@@ -3,10 +3,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/lsh.dir/executor.c.o.d"
   "CMakeFiles/lsh.dir/main.c.o"
   "CMakeFiles/lsh.dir/main.c.o.d"
+  "CMakeFiles/lsh.dir/piper.c.o"
+  "CMakeFiles/lsh.dir/piper.c.o.d"
   "CMakeFiles/lsh.dir/reader.c.o"
   "CMakeFiles/lsh.dir/reader.c.o.d"
-  "CMakeFiles/lsh.dir/signaler.c.o"
-  "CMakeFiles/lsh.dir/signaler.c.o.d"
   "lsh"
   "lsh.pdb"
 )

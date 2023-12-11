@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/lsh.dir/main.c.o CMakeFiles/lsh.dir/executor.c.o CMakeFiles/lsh.dir/reader.c.o CMakeFiles/lsh.dir/signaler.c.o -o lsh 
+/usr/bin/cc -g CMakeFiles/lsh.dir/main.c.o CMakeFiles/lsh.dir/executor.c.o CMakeFiles/lsh.dir/reader.c.o CMakeFiles/lsh.dir/piper.c.o -o lsh 

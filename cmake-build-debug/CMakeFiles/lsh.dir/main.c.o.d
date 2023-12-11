@@ -1,4 +1,5 @@
-CMakeFiles/lsh.dir/main.c.o: /mnt/c/Users/pawel/CLionProjects/lsh/main.c \
+CMakeFiles/lsh.dir/main.c.o: \
+ /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/main.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -47,8 +48,8 @@ CMakeFiles/lsh.dir/main.c.o: /mnt/c/Users/pawel/CLionProjects/lsh/main.c \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /mnt/c/Users/pawel/CLionProjects/lsh/reader.h \
- /mnt/c/Users/pawel/CLionProjects/lsh/executor.h \
+ /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/reader.h \
+ /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/executor.h \
  /usr/include/linux/limits.h /usr/include/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
