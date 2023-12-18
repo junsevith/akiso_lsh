@@ -1,7 +1,7 @@
 CMakeFiles/lsh.dir/reader.c.o: \
- /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/reader.c \
+ /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lshv2/reader.c \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lsh/reader.h \
+ /mnt/c/Users/pawel/Desktop/studia/akiso/zadania/272338/L5/lshv2/reader.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
